@@ -1,0 +1,14 @@
+.itemLi{
+    font-weight: 500;
+}
+
+.button{
+    float: right;
+    font-size: 12px;
+    width: 10%;
+    margin-bottom: 8px;
+}
+
+.type{
+    list-style-type: none;
+}
