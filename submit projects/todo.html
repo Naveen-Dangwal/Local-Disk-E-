@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Todo App</title>
+  <style>
+    b{
+       border-radius: 5px;
+       margin: 5px;
+       padding: 5px;      
+    }
+  </style>
+</head>
+<body>
+
+  <h1 style="text-align: center;">Todo App</h1>
+  <hr>
+  <input type="text" placeholder="Enter todo here" id="todo-text">
+  <input type="date" id="todo-date">
+   <button onclick="addTodo()">Add Todo</button>
+  <hr>
+
+  <p id="main-container"></p>
+
+  <script>
+    let count=0;
+   let addTodo = () =>{
+    // create parent element
+    let parentElement = document.createElement('p');
+
+     // create child elememt
+    let todoText = document.createElement('b');
+    let todoDate = document.createElement('b');
+    let todoDelBtn = document.createElement('button');
+
+    todoText.innerHTML = document.querySelector('#todo-text').value;
+    todoDate.innerHTML = document.querySelector('#todo-date').value;
+
+    todoText.style.backgroundColor = 'red';
+    todoText.style.color = 'white';
+
+    todoDate.style.backgroundColor = 'blue';
+    todoDate.style.color = 'white';
+ 
+    let id = 'p' + (++count);
+
+    todoDelBtn.setAttribute('style','float:right; color:blue; background-color:yellow; border:2px dotted red; border-radius:5px');
+   
+// todoDelBtn.setAttribute('onclick',`removeElement(${id})`); //  id.remove();
+todoDelBtn.setAttribute('onclick',`removeElement('${id}')`); //
+   
+    parentElement.append(todoText);
+    parentElement.append(todoDate);
+
+    parentElement.setAttribute('style','background-color:lightgrey; border:2px solid red; border-radius:5px; padding:10px;');
+
+    parentElement.setAttribute('id',id);
+
+    document.querySelector('#main-container').appendChild(parentElement);
+   }
+
+   function removeElement(id){
+// id.remove();
+document.querySelector('#main-container').removeChild
+  (document.querySelector(`#${id}`));
+    }
+  </script>
+</body>
+</html>
