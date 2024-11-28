@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Number Table</h1><br>
+    <input type="text" placeholder="enter any number" id="no"><br><br>
+    <button onclick="
+    let a=document.getElementById('no').value;
+    let s,i;
+    let r='';
+    for(i=1;i<=10;i++)
+    {
+        s=i*a;
+    
+    r+='${a} X ${i} = ${s} <br>';
+    }
+    r=document.getElementById('p').innerHTML;
+    ">click me</button>
+    <hr>
+    <div id="p"></div>
+</body>
+</html>
